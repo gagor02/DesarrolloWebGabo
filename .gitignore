@@ -1,0 +1,36 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+ENV/
+env/
+*.sqlite3
+
+# Django
+/static/
+/media/
+/db.sqlite3
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# MySQL dumps
+*.sql
+
+# Node modules (if used)
+node_modules/
+
+# Compiled files
+*.egg-info/
+dist/
