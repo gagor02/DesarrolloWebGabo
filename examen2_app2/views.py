@@ -26,9 +26,97 @@ class TaskList(generic.View):
 
     def get(self, request):
         self.context = {
-            "tasks": models.Tasks.objects.filter(state='Sin_Resolver')
+            "tasks": models.Tasks.objects.all()
         }
         return render(request, self.template_name, self.context)
+
+# List by ID
+
+class TaskListID(generic.View):
+    template_name = 'examen2_app2/task_list_ids.html'
+    context = {}
+
+    def get(self, request):
+        self.context = {
+            "tasks": models.Tasks.objects.all()
+        }
+        return render(request, self.template_name, self.context)
+    
+# List by ID and Title
+
+class TaskListIDTitle(generic.View):
+    template_name = 'examen2_app2/task_list_idstitles.html'
+    context = {}
+
+    def get(self, request):
+        self.context = {
+            "tasks": models.Tasks.objects.all()
+        }
+        return render(request, self.template_name, self.context)
+    
+# List by ID and Title no completed
+
+class TaskListIDTitleNoCompleted(generic.View):
+    template_name = 'examen2_app2/nocompleted_task_list_idstitles.html'
+    context = {}
+
+    def get(self, request):
+        self.context = {
+            "tasks": models.Tasks.objects.filter(state='SR')
+        }
+        return render(request, self.template_name, self.context)
+    
+# List by ID and Title completed
+
+class TaskListIDTitleCompleted(generic.View):
+    template_name = 'examen2_app2/completed_task_list_idstitles.html'
+    context = {}
+
+    def get(self, request):
+        self.context = {
+            "tasks": models.Tasks.objects.filter(state='R')
+        }
+        return render(request, self.template_name, self.context)
+    
+
+# List by ID and UserID
+
+class TaskListIDUserID(generic.View):
+    template_name = 'examen2_app2/task_list_ids_userids.html'
+    context = {}
+
+    def get(self, request):
+        self.context = {
+            "tasks": models.Tasks.objects.all()
+        }
+        return render(request, self.template_name, self.context)
+    
+
+# List by ID and UserID completed
+
+class TaskListIDUserIDCompleted(generic.View):
+    template_name = 'examen2_app2/completed_task_list_ids_userids.html'
+    context = {}
+
+    def get(self, request):
+        self.context = {
+            "tasks": models.Tasks.objects.filter(state='R')
+        }
+        return render(request, self.template_name, self.context)
+    
+# List by ID and UserID no completed
+
+class TaskListIDUserIDNoCompleted(generic.View):
+    template_name = 'examen2_app2/nocompleted_task_list_ids_userids.html'
+    context = {}
+
+    def get(self, request):
+        self.context = {
+            "tasks": models.Tasks.objects.filter(state='SR')
+        }
+        return render(request, self.template_name, self.context)
+    
+
     
 ## Details
 class TaskDetail(generic.View):
