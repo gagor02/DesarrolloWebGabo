@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+
+{% block title %}DELETE TASK VIEW{% endblock title %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+            <h2>¿Realmente deseas eliminar esta Task?: <code>{{ object }}</code> ?</h2>
+            
+            <button type="submit" class="btn btn-outline-danger form-control">Delete Task</button>
+            <a href="examen2_app2:list_tasks" class="btn btn-outline-warning form-control">Cancel</a>
+    </form>
+{% endblock content %}

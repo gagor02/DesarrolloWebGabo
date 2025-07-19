@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}NEW TASK VIEW{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Create New Task</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="state" class="form-label">State</label>
+            <input type="text" class="form-control" id="state" name="state" value="Sin Resolver" required>
+        </div>
+        <div class="mb-3">
+            <label for="user_id" class="form-label">User ID</label>
+            <input type="number" class="form-control" id="user_id" name="user_id" required>
+        </div>
+        <button type="submit" class="btn btn-outline-success">New Task</button>
+        <a href="{% url 'examen2_app2:list_tasks' %}" class="btn btn-outline-warning">Cancel</a>
+    </form>
+</div>
+{% endblock content%}
