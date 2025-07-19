@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1 class="mb-4">Welcome to ParraDevs</h1>
+            <div class="d-grid gap-3">
+                <a href="{% url 'examen2_app2:list_tasks' %}" class="btn btn-primary btn-lg">Task List</a>
+                <a href="{% url 'examen2_app2:list_user' %}" class="btn btn-secondary btn-lg">User List</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

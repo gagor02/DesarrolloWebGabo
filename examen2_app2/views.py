@@ -7,6 +7,9 @@ from django.urls import reverse_lazy
 from examen2_app2 import models
 from examen2_app2 import forms
 
+def home(request):
+    return render(request, 'home.html')
+
 ### CRUD Tareas pros ###
 
 # Create
@@ -15,7 +18,7 @@ class NewTask(generic.CreateView):
     template_name = 'examen2_app2/create_task.html'
     model = models.Tasks
     form_class = forms.NewTaskForm
-    success_url = reverse_lazy('examen2_app2:task_list')
+    success_url = reverse_lazy('examen2_app2:list_tasks')
 
 # Read
 
